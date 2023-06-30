@@ -307,7 +307,7 @@ class FlutterLogs {
     }
   }
 
-  static Future<void> exportLogs(
+  static Future<String> exportLogs(
       {ExportType exportType = ExportType.ALL,
       bool decryptBeforeExporting = false}) async {
     final String result =
@@ -316,6 +316,7 @@ class FlutterLogs {
       'decryptBeforeExporting': decryptBeforeExporting
     });
     printDebugMessage(result, 2);
+    return result;
   }
 
   static Future<void> printLogs(
